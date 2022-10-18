@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import './Header.css'
-import { movies } from "../../App"
 import { useNavigate } from "react-router-dom";
 
 export default function Header(props){
@@ -11,7 +10,7 @@ export default function Header(props){
 
     useEffect(()=>{
         let tempFilters = [];
-        movies.forEach((movie)=>{
+        props.movies.forEach((movie)=>{
             if(movie.name.toLowerCase().includes(search.toLowerCase())){
                 tempFilters.push(movie);
             }
